@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Snake Game</title>
+        <link rel="stylesheet" href="src/styles/main.css">
+        <script type="text/javascript" src="src/js/pixi.min.js"></script>
+    </head>
+    <body>
+        <div class="app">
+            <div id="game-container"></div>
+            <div id="message">
+                <p>Game over!</p>
+            </div>
+            <div class="gui">
+                <h1 class="title">Snake Game</h1>
+                <div class="gui-text">
+                    <p>Best :</p>
+                    <p id="best">0</p>
+                </div>
+                <div class="gui-text">
+                    <p>Score :</p>
+                    <p id="score">0</p>
+                </div>
+                <form id="modes">
+                    <label>
+                        <input type="radio" name="mode" value="classic" checked>
+                        <span class="mode-title">Classic</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="mode" value="godMode" disabled>
+                        <span class="mode-title--disabled">God Mode</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="mode" value="walls" disabled>
+                        <span class="mode-title--disabled">Walls</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="mode" value="portal" disabled>
+                        <span class="mode-title--disabled">Portal</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="mode" value="speed" disabled>
+                        <span class="mode-title--disabled">Speed</span>
+                    </label>
+                </form>
+                <div class="buttons">
+                    <button id="menuButton">Menu</button>
+                    <button id="playButton">Play</button>
+                    <button id="exitButton">Exit</button>
+                </div>
+            </div>
+        </div>
+        <script src="src/js/global-variables.js"></script>
+        <script src="src/js/utilities.js"></script>
+        <script src="src/js/square.js"></script>
+        <script src="src/js/food.js"></script>
+        <script src="src/js/snake.js"></script>
+        <script src="src/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input, button {
+    font: inherit;
+}
+
+.app {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.gui {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #077482;
+    padding-top: 20px;
+}
+
+.title {
+    text-align: center;
+    color: #55d292;
+    margin: 0 30px 30px;
+}
+
+.gui-text {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #FFFFFF;
+    background-color: #075e6c;
+}
+
+.gui-text p {
+    width: 50%;
+}
+
+#modes {
+    display: flex;
+    flex-direction: column;
+    background-color: #195756;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+}
+
+.mode-title {
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 22px;
+    display: inline-block;
+}
+
+.mode-title--disabled {
+    color: #e0e0e0;
+    font-size: 21px;
+    line-height: 22px;
+    display: inline-block;
+}
+
+label {
+    display: flex;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+
+input[type='radio'] {
+    margin-right: 15px;
+    box-sizing: border-box;
+    appearance: none;
+    background: white;
+    border: 1px solid transparent;
+    width: 20px;
+    height: 20px;
+}
+
+input[type='radio']:checked {
+    background: url("../images/check.png") no-repeat;
+    background-size: 20px 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 0 0 15px;
+}
+
+.buttons button {
+    padding: 20px 30px;
+    margin-right: 15px;
+    background-color: #195756;
+    color: #FFFF;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#message {
+    position: absolute;
+    display: none;
+    margin: 0 auto;
+    top: 41%;
+    left: 12%;
+    background-color: #ffffff;
+    padding: 25px;
+    font-size: 33px;
+    color: red;
+    font-weight: 600;
+}
+
+#game-container {
+    position: relative;
+    display: flex;
+    width: 600px;
+    height: 600px;
+    background-color: #575757;
+    border: 20px solid #a96a0e;
+}
+
+#menuButton {
+    display: none;
+    margin-top: 290px;
+}
+
+#playButton {
+    display: block;
+}
+
+#exitButton {
+    display: block;
+}
+
