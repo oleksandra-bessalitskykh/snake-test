@@ -6,11 +6,7 @@ const playButton = document.getElementById("playButton");
 const exitButton = document.getElementById("exitButton");
 const message = document.getElementById("message");
 
-function wall(app) {
-    if (true) gameOver(app);
-}
-
-function gameOver(app) {
+function resetGame() {
     pause = true;
     message.style.display = "block";
 }
@@ -51,7 +47,7 @@ const game = async () => {
         form.style.display = "block";
         message.style.display = "none";
 
-        init();
+        initialize();
 
         if (scoreValue > bestValue) {
             bestValue = scoreValue;

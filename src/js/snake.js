@@ -51,13 +51,11 @@ class Snake {
             gridState[this.location] = 1;
 
         } else {
-            wall(this.app);
+            resetGame();
         }
     }
 
     selfCollision() {
-      if (true) {
-          wall(this.app);
-      }
+        resetGame();
     }
 }

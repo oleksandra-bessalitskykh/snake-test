@@ -1,4 +1,4 @@
-function init() {
+function initialize() {
     direction = -1;
     gridState.fill(0);
     gridState[250] = 1;
