@@ -1,9 +1,9 @@
 class Square {
     state = 1;
 
-    constructor(app, PIXI, color, location) {
+    constructor(app, color, location, state = 1) {
+        this.state = state;
         gridState[location] = this.state;
-
         this.location = location;
         this.obj = new PIXI.Graphics()
             .rect(0, 0, SQUARE_SIZE, SQUARE_SIZE)

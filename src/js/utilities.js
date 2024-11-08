@@ -5,6 +5,7 @@ function initialize() {
     gridState[251] = 1;
     gridState[252] = 1;
     gridState[253] = 1;
+    speed = 200;
 }
 
 function checkBorder(nextLocation, location) {

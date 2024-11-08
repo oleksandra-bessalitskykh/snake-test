@@ -14,3 +14,9 @@ const TAIL_START_LOCATIONS = [251, 252, 253];
 const GREEN_COLOR = '#00bb00';
 const WHITE_COLOR = '#ffffff';
 const YELLOW_COLOR = '#fcba03';
+const BROWN_COLOR = '#a96a0e';
+const GRAY_COLOR = '#575757';
+const ORANGE_COLOR = '#FF6600';
+const BLUE_COLOR = '#6599FF';
+
+let gameMode = 'classic';

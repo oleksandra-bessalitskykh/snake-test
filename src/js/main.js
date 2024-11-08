@@ -11,6 +11,16 @@ function resetGame() {
     message.style.display = "block";
 }
 
+const radioButtons = document.querySelectorAll('input[name="mode"]');
+
+radioButtons.forEach(radio => {
+    radio.addEventListener('change', (event) => {
+        if (event.target.checked) {
+            gameMode = event.target.value;
+        }
+    });
+});
+
 document.addEventListener("keydown", function (event) {
     event.preventDefault();
     const key = event.key;
@@ -32,13 +42,20 @@ document.addEventListener("keydown", function (event) {
 
 const game = async () => {
     const app = new PIXI.Application();
-    await app.init({width: FIELD_SIZE, height: FIELD_SIZE, background: '#575757'});
+    await app.init({width: FIELD_SIZE, height: FIELD_SIZE, background: GRAY_COLOR});
 
     document.getElementById("game-container").appendChild(app.canvas);
 
     let deltaTime = 0;
-    let food = new Food(app, PIXI);
-    let snake = new Snake(app, PIXI, food);
+    let food = null;
+
+    if (gameMode === 'portal') {
+        food = new Portal(app);
+    } else {
+        food = new Food(app);
+    }
+
+    let snake = new Snake(app, food);
 
     menuButton.addEventListener('click', function handleClick() {
         menuButton.style.display = "none";

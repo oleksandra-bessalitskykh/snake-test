@@ -42,7 +42,7 @@ input, button {
     margin: 0 30px 30px;
 }
 
-.gui-text {
+.gui-text-best {
     display: flex;
     justify-content: space-between;
     padding: 10px 15px;
@@ -51,10 +51,23 @@ input, button {
     font-weight: 500;
     line-height: 22px;
     color: #FFFFFF;
-    background-color: #075e6c;
+    background-color: #075f6d;
 }
 
-.gui-text p {
+.gui-text-score {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #FFFFFF;
+    background-color: #064d5c;
+}
+
+.gui-text-best p,
+.gui-text-score p {
     width: 50%;
 }
 
@@ -68,13 +81,6 @@ input, button {
 
 .mode-title {
     color: #ffffff;
-    font-size: 21px;
-    line-height: 22px;
-    display: inline-block;
-}
-
-.mode-title--disabled {
-    color: #e0e0e0;
     font-size: 21px;
     line-height: 22px;
     display: inline-block;
@@ -151,4 +157,3 @@ input[type='radio']:checked {
 #exitButton {
     display: block;
 }
-

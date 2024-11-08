@@ -15,11 +15,11 @@
             </div>
             <div class="gui">
                 <h1 class="title">Snake Game</h1>
-                <div class="gui-text">
+                <div class="gui-text-best">
                     <p>Best :</p>
                     <p id="best">0</p>
                 </div>
-                <div class="gui-text">
+                <div class="gui-text-score">
                     <p>Score :</p>
                     <p id="score">0</p>
                 </div>
@@ -29,20 +29,20 @@
                         <span class="mode-title">Classic</span>
                     </label>
                     <label>
-                        <input type="radio" name="mode" value="godMode" disabled>
-                        <span class="mode-title--disabled">God Mode</span>
+                        <input name="mode" type="radio" value="godMode">
+                        <span class="mode-title">No Die</span>
                     </label>
                     <label>
-                        <input type="radio" name="mode" value="walls" disabled>
-                        <span class="mode-title--disabled">Walls</span>
+                        <input name="mode" type="radio" value="walls">
+                        <span class="mode-title">Walls</span>
                     </label>
                     <label>
-                        <input type="radio" name="mode" value="portal" disabled>
-                        <span class="mode-title--disabled">Portal</span>
+                        <input name="mode" type="radio" value="portal">
+                        <span class="mode-title">Portal</span>
                     </label>
                     <label>
-                        <input type="radio" name="mode" value="speed" disabled>
-                        <span class="mode-title--disabled">Speed</span>
+                        <input name="mode" type="radio" value="speed">
+                        <span class="mode-title">Speed</span>
                     </label>
                 </form>
                 <div class="buttons">
@@ -55,7 +55,9 @@
         <script src="src/js/global-variables.js"></script>
         <script src="src/js/utilities.js"></script>
         <script src="src/js/square.js"></script>
+        <script src="src/js/portal.js"></script>
         <script src="src/js/food.js"></script>
+        <script src="src/js/wall.js"></script>
         <script src="src/js/snake.js"></script>
         <script src="src/js/main.js"></script>
     </body>

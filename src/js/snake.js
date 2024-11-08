@@ -1,5 +1,5 @@
 class Snake {
-    constructor(app, PIXI, food) {
+    constructor(app, food) {
         this.food = food;
         this.app = app;
         this.location = START_SNAKE_POSITION;
@@ -16,9 +16,9 @@ class Snake {
         this.obj.y = (Math.floor(this.location / GRID_SIZE)) * SQUARE_SIZE;
 
         this.tail = [
-            new Square(app, PIXI, WHITE_COLOR, TAIL_START_LOCATIONS[0]),
-            new Square(app, PIXI, WHITE_COLOR, TAIL_START_LOCATIONS[1]),
-            new Square(app, PIXI, WHITE_COLOR, TAIL_START_LOCATIONS[2]),
+            new Square(app, WHITE_COLOR, TAIL_START_LOCATIONS[0]),
+            new Square(app, WHITE_COLOR, TAIL_START_LOCATIONS[1]),
+            new Square(app, WHITE_COLOR, TAIL_START_LOCATIONS[2]),
         ];
     }
 
@@ -29,6 +29,17 @@ class Snake {
         if (gridState[nextLocation] === 1) this.selfCollision();
 
         if (checkBorder(nextLocation, this.location)) {
+
+            if (gameMode === 'portal') {
+                if (this.location === this.food.from.location) {
+                    this.location = this.food.to.location;
+                }
+
+                if (this.location === this.food.to.location) {
+                    this.location = this.food.from.location;
+                }
+            }
+
             this.location += direction;
 
             this.obj.x = (this.location % GRID_SIZE) * SQUARE_SIZE;
@@ -38,24 +49,45 @@ class Snake {
 
             gridState[tailEnd] = 0;
 
-            console.log(gridState[this.location]);
-
             if (gridState[this.location] === 2) {
-                this.food.move(getRandomLocation());
-                this.tail.push(new Square(this.app, PIXI, WHITE_COLOR, tailEnd));
+                this.food.move(this);
+                this.tail.push(new Square(this.app, WHITE_COLOR, tailEnd));
 
                 scoreValue += 1;
                 score.innerText = scoreValue;
+
+                if (gameMode === 'speed') {
+                    speed = speed * 0.9;
+                }
+
+                if (gameMode === 'walls') {
+                    new Wall(this.app);
+                }
             }
 
             gridState[this.location] = 1;
 
         } else {
-            resetGame();
+
+            if (gameMode !== 'godMode') {
+                resetGame();
+            } else {
+                this.location = (this.location + direction) - (direction * GRID_SIZE);
+
+                this.obj.x = (this.location % GRID_SIZE) * SQUARE_SIZE;
+                this.obj.y = (Math.floor(this.location / GRID_SIZE)) * SQUARE_SIZE;
+
+                const tailEnd = this.tail.reduce((location, tailItem) => tailItem.move(location), prevLocation);
+
+                gridState[tailEnd] = 0;
+            }
         }
     }
 
     selfCollision() {
-        resetGame();
+
+        if (gameMode !== 'godMode') {
+            resetGame();
+        }
     }
 }
